@@ -15,8 +15,17 @@ export class AppComponent {
          this.title = "The Will Will Web";
        }, 2000); */
   };
-  changeTitle() {
-    this.title = "The Will Will Web";
+  /* changeTitle(altkey: boolean) {
+    if (altkey) {
+      this.title = "The Will Will Web";
+    }
+  }; */
+
+  changeTitle($event: PointerEvent) {
+    if ($event.altKey) {
+      this.title = "The Will Will Web";
+    }
+    console.log($event);
   };
 
 }
