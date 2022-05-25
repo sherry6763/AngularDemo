@@ -11,8 +11,12 @@ export class AppComponent {
   src = '/assets/images/logo.png';
 
   constructor() {
-    setTimeout(() => {
-      this.title = "The Will Will Web";
-    }, 2000);
+    /*    setTimeout(() => {
+         this.title = "The Will Will Web";
+       }, 2000); */
   };
+  changeTitle() {
+    this.title = "The Will Will Web";
+  };
+
 }
