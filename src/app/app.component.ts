@@ -9,6 +9,7 @@ export class AppComponent {
   title = 'demo1';
   url = 'http://blog.miniasp.com/';
   src = '/assets/images/logo.png';
+  wordcount = 0;
 
   constructor() {
     /*    setTimeout(() => {
@@ -27,5 +28,13 @@ export class AppComponent {
     }
     console.log($event);
   };
+
+  changeKeyWord(keyword: string) {
+    this.wordcount = keyword.length;
+  }
+  changeKeyReset(input: HTMLInputElement) {
+    input.value = '';
+    this.wordcount = 0;
+  }
 
 }
