@@ -9,18 +9,9 @@ export class AppComponent {
   title = 'demo1';
   url = 'http://blog.miniasp.com/';
   src = '/assets/images/logo.png';
-  wordcount = 0;
+  keywords = '';
 
-  constructor() {
-    /*    setTimeout(() => {
-         this.title = "The Will Will Web";
-       }, 2000); */
-  };
-  /* changeTitle(altkey: boolean) {
-    if (altkey) {
-      this.title = "The Will Will Web";
-    }
-  }; */
+  constructor() { };
 
   changeTitle($event: PointerEvent) {
     if ($event.altKey) {
@@ -29,12 +20,8 @@ export class AppComponent {
     console.log($event);
   };
 
-  changeKeyWord(keyword: string) {
-    this.wordcount = keyword.length;
-  }
-  changeKeyReset(input: HTMLInputElement) {
-    input.value = '';
-    this.wordcount = 0;
+  changeKeyReset() {
+    this.keywords = '';
   }
 
 }
