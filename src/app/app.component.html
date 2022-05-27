@@ -107,7 +107,7 @@
               <input type="text" #tKeyword [(ngModel)]="keywords" (keyup.escape)="changeKeyReset()"
                 placeholder="請輸入搜尋關鍵字" accesskey="s">
               <input type="button" value="搜尋" id="searchbutton">
-              <br />關鍵字：{{ keywords }} 目前字數：{{ tKeyword.value.length }}
+              <br />關鍵字：{{ keywords }} 目前字數：{{ tKeyword.value.length }} 或 {{ keywords.length}}
             </div>
           </div>
         </div>
