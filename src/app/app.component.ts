@@ -8,6 +8,9 @@ import { Component } from '@angular/core';
 export class AppComponent {
 
   keywords = '';
+  pi: number = 3.14159265359;
+  a: number = 0.259;
+  b: number = 1.3495;
 
   constructor() { };
 
