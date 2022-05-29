@@ -9,10 +9,11 @@
       <div id="ctl00_cphBody_divError"></div>
       <div id="ctl00_cphBody_PostList1_posts" class="posts">
         <!-- Article START-->
-        <article class="post" id="post{{idx}}" *ngFor=" let item of data | slice : 3; let idx=index">
+        <article class="post" id="post{{idx}}" *ngFor=" let item of data; let idx=index">
           <header class="post-header">
             <h2 class="post-title">
-              <a [href]="item.href">{{ item.title | uppercase | slice : -33}}</a>
+              <a [href]="item.href">{{ item['subject']?.title | uppercase | slice : -33}}</a>
+              <small>{{ $any(item).subject?.subtitle }}</small>
             </h2>
             <div class="post-info clearfix">
               <span class="post-date"><i class="glyphicon glyphicon-calendar"></i>
