@@ -8,68 +8,15 @@
     <section class="col-md-8 content-wrapper">
       <div id="ctl00_cphBody_divError"></div>
       <div id="ctl00_cphBody_PostList1_posts" class="posts">
-
-        <div>
-          <p>
-            No specified formatting:
-            {{pi | number}}
-            <!--output: '3.142'-->
-          </p>
-
-          <p>
-            With digitsInfo parameter specified:
-            {{pi | number:'4.1-5'}}
-            <!--output: '0,003.14159'-->
-          </p>
-
-          <p>
-            With digitsInfo and locale parameters specified:
-            {{pi | number:'4.1-5':'en-US'}}
-            <!--output: '0 003,14159'-->
-          </p>
-          <div>
-            <!--output '$0.26'-->
-            <p>A: {{a | currency}}</p>
-
-            <!--output 'CA$0.26'-->
-            <p>A: {{a | currency:'CAD'}}</p>
-
-            <!--output 'CAD0.26'-->
-            <p>A: {{a | currency:'CAD':'code'}}</p>
-
-            <!--output 'CA$0,001.35'-->
-            <p>B: {{b | currency:'CAD':'symbol':'4.2-2'}}</p>
-
-            <!--output '$0,001.35'-->
-            <p>B: {{b | currency:'CAD':'symbol-narrow':'4.2-2'}}</p>
-
-            <!--output '0 001,35 CA$'-->
-            <p>B: {{b | currency:'CAD':'symbol':'4.2-2':'en-US'}}</p>
-
-            <!--output 'CLP1' because CLP has no cents-->
-            <p>B: {{b | currency:'TWD'}}</p>
-          </div>
-          <div>
-            <!--output '26%'-->
-            <p>A: {{a | percent}}</p>
-
-            <!--output '0,134.950%'-->
-            <p>B: {{b | percent:'4.3-5'}}</p>
-
-            <!--output '0 134,950 %'-->
-            <p>B: {{b | percent:'4.3-5':'en-US'}}</p>
-          </div>
-        </div>
-
-
         <!-- Article START-->
-        <article class="post" id="post{{idx}}" *ngFor=" let item of data; let idx=index">
+        <article class="post" id="post{{idx}}" *ngFor=" let item of data | slice : 3; let idx=index">
           <header class="post-header">
             <h2 class="post-title">
-              <a [href]="item.href">{{ item.title | uppercase }}</a>
+              <a [href]="item.href">{{ item.title | uppercase | slice : -33}}</a>
             </h2>
             <div class="post-info clearfix">
-              <span class="post-date"><i class="glyphicon glyphicon-calendar"></i>{{item.date}}</span>
+              <span class="post-date"><i class="glyphicon glyphicon-calendar"></i>
+                {{item.date | date :'mediumDate'}}</span>
               <span class="post-author"><i class="glyphicon glyphicon-user"></i><a
                   href="http://blog.miniasp.com/author/will.aspx">{{item.author}}</a></span>
               <span class="post-category"><i class="glyphicon glyphicon-folder-close"></i><a
@@ -77,8 +24,8 @@
             </div>
           </header>
           <section class="post-body text" [innerHTML]="item.summary">
-
           </section>
+          <pre>{{ item | json }}</pre>
         </article>
 
         <!-- Article END-->
