@@ -6,9 +6,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./article-list.component.css']
 })
 export class ArticleListComponent implements OnInit {
-  data;
+
+  //宣告型別
+  data: Array<any>;
 
   constructor() { }
+
+  doDelete(item) {
+    this.data = this.data.filter((v) => {
+      return v !== item;
+    });
+  }
 
   ngOnInit(): void {
     this.data = [
