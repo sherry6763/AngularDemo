@@ -9,7 +9,7 @@ export class ArticleListComponent implements OnInit {
 
   //宣告型別
   data: Array<any>;
-
+  counter = 0;
   constructor() { }
 
   doDelete(item) {
@@ -32,6 +32,10 @@ export class ArticleListComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    setTimeout(() => {
+      this.counter++;
+    }, 2000);
+
     this.data = [
       {
         "id": 1,
