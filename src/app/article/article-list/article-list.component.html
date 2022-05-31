@@ -1,5 +1,5 @@
-<article class="post" id="post{{idx}}" *ngFor=" let item of data; let idx=index">
-  <app-article-header [item]="item" (delete)="doDelete($event)" (titleChanged)="doChange($event)">
+<article class="post" id="post{{idx}}" *ngFor="let item of datasvc.data; let idx=index">
+  <app-article-header [item]="item" (delete)="datasvc.doDelete($event)" (titleChanged)="datasvc.doModify($event)">
   </app-article-header>
   <app-article-body [item]="item" [counterC]="counter"></app-article-body>
 </article>
