@@ -1,3 +1,4 @@
+import { DataService } from './../data.service';
 import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -19,6 +20,7 @@ import { ArticleBodyComponent } from './article-body/article-body.component';
   ],
   exports: [
     ArticleListComponent
-  ]
+  ],
+  providers: [DataService],
 })
 export class ArticleModule { }
